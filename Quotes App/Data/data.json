@@ -1,0 +1,52 @@
+[
+    {
+        "image":"Naruto",
+        "cardQuote":"If you don’t like the hand that fate’s dealt you with, fight for a new one.",
+        "author":"Naruto Uzumaki",
+        "quotes":["If you don’t like your destiny, don’t accept it. Instead have the courage to change it the way you want it to be.",
+                    "Somebody told me I’m a failure, I’ll prove them wrong",
+                    "When people are protecting something truly special to them, they truly can become as strong as they can be.",
+                    "Once you question your own belief it’s over.",
+                    "Bonds aren’t just about history or blood, It’s something much stronger, Feelings of love, that’s all you need."]
+    },
+    {
+        "image":"Ichigo",
+        "cardQuote":"I'm not fighting because I want to win. I'm fighting because I have to win.",
+        "author":"Ichigo Kurosaki",
+        "quotes":["It's meaningless to just live, and it's meaningless to just fight. I want to win.",
+                    "Become strong not just for your own sake, but for your friends.",
+                    "We can’t waste time worrying about the what if’s.",
+                    "If fate is a millstone, then we are the grist. There is nothing we can do. So I wish for strength.",
+                    "The difference in ability, What about it? Do you think I should give up just because you’re stronger than me?"]
+    },
+    {
+        "image":"Luffy",
+        "cardQuote":"I don’t wanna conquer anything. It's just that the person with the most freedom on the sea is the Pirate King.",
+        "author":"Luffy",
+        "quotes":["I'm pretty sure I can't live without being helped!",
+                    "I'm pretty sure I can't live without being helped!",
+                    "If you don’t take risks, you can’t create a future.",
+                    "If that old man tells me anything...I will quit being a pirate. If it’s a boring adventure, I don’t want to do it.",
+                    "I decided to be Pirate King. I don’t care if I die for it."]
+    },
+    {
+        "image":"Edward",
+        "cardQuote":"No matter how big the place is, we’ll eventually reach the edge if we keep moving forward!",
+        "author":"Edward Elric",
+        "quotes":["We’re going to be moving forward! If we move forward, we’ll get stronger, both physically and mentally.",
+                    "Maybe life has no equal trade, maybe you can give up all you got, and get nothing back. Even if I can’t prove it’s true, I have to try, for your sake, Al.",
+                    "The cycle of life goes only one direction, not even alchemy can change that.",
+                    "I can’t tell you that… You have to figure it out. Stand up and walk. Keep moving forward. You’ve got two good legs. So get up and use them. You’re strong enough to make your own path.",
+                    "I will do what I can, even if my chance of passing is minuscule, if that will allow me to move forward."]
+    },
+    {
+        "image":"Lelouch",
+        "cardQuote":"The human heart is the source of all our power. We fight with the power of our hearts.",
+        "author":"Lelouch Vi Britannia",
+        "quotes":["You will never be able to love anybody else until you love yourself.",
+                    "You cannot change the world with pretty words alone.",
+                    "Time flows constantly, it doesn’t care about the people who are struggling.",
+                    "Don't mistake borrowed power for your own ability!",
+                    "Before creation, there must be destruction. If my soul stand in the way, then i'll toss it aside. Yes, I have no choice but to move forward."]
+    }
+]
