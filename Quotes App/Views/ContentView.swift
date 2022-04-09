@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        //Use ScrollView container to generate quote card images
+        ScrollView{
+            VStack{
+                
+            }
+        }
     }
 }
 
