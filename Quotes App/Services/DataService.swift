@@ -9,7 +9,9 @@ import Foundation
 
 class DataServices{
     
-    func getLocalData() -> [Quote] {
+    //Function used to get the data from the JSON file and return it as an array
+    //Use static keyword so that we can call this function without having to create an instance of this class since it is only being used to call this function
+    static func getLocalData() -> [Quote] {
         
         //Get a url path to the JSON file
         //Return a String optional

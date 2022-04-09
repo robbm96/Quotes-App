@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //Create a QuoteModel object
+    //Use @ObservedObject wrapper so we can see changed made to QuoteModel and the array
+    @ObservedObject var model = QuoteModel()
+    
     var body: some View {
         
         //Use ScrollView container to generate quote card images
