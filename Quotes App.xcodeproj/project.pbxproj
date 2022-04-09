@@ -15,6 +15,7 @@
 		505902E728021AF00024E328 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 505902E628021AF00024E328 /* data.json */; };
 		505902E928021B180024E328 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505902E828021B180024E328 /* QuotesView.swift */; };
 		505902EB28021B510024E328 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505902EA28021B510024E328 /* QuoteModel.swift */; };
+		505902EE28022C710024E328 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505902ED28022C710024E328 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		505902E628021AF00024E328 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		505902E828021B180024E328 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
 		505902EA28021B510024E328 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		505902ED28022C710024E328 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				505902DF2802184B0024E328 /* Views */,
 				505902E0280218550024E328 /* ViewModels */,
 				505902E1280218630024E328 /* Models */,
+				505902EC28022C4D0024E328 /* Services */,
 				505902E2280218B50024E328 /* Data */,
 				505902D5280205870024E328 /* Assets.xcassets */,
 				505902D7280205870024E328 /* Preview Content */,
@@ -109,6 +112,14 @@
 				505902E628021AF00024E328 /* data.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		505902EC28022C4D0024E328 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				505902ED28022C710024E328 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				505902EB28021B510024E328 /* QuoteModel.swift in Sources */,
 				505902D4280205850024E328 /* ContentView.swift in Sources */,
 				505902D2280205850024E328 /* Quotes_App.swift in Sources */,
+				505902EE28022C710024E328 /* DataService.swift in Sources */,
 				505902E428021A090024E328 /* Quote.swift in Sources */,
 				505902E928021B180024E328 /* QuotesView.swift in Sources */,
 			);
