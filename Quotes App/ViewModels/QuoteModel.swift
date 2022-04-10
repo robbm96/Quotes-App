@@ -16,7 +16,7 @@ class QuoteModel: ObservableObject {
     
     //Set initializer that will assign data returned from the decoder to quotes array
     init() {
-        quotes.self = getLocalData()
+        self.quotes = getLocalData()
     }
     
     //Function used to get the data from the JSON file and return it as an array
@@ -28,45 +28,53 @@ class QuoteModel: ObservableObject {
         let pathString = Bundle.main.path(forResource: "data", ofType: "json")
         
         //Validate that pathString is not nil
-        guard pathString != nil else{
-            return [Quote]()
-        }
-        
-        //Create a url object from the pathString
-        //Unwrap pathString since it is an optional
-        let url = URL(fileURLWithPath: pathString!)
-        
-        //Create a data object from the url object
-        //Since the Data class can throw an error, we must utilize do-try-catch
-        do{
-            let data = try Data(contentsOf: url)
+        if let pathString = pathString {
             
-            //Initaliate decoder object
-            let decoder = JSONDecoder()
+            //Create a url object from the pathString
+            //Unwrap pathString since it is an optional
+            let url = URL(fileURLWithPath: pathString)
             
-            //Decode the data with a JSON Decoder
-            //Utilize do-try-catch since decode class can throw an error
+            //Create a data object from the url object
+            //Since the Data class can throw an error, we must utilize do-try-catch
             do{
-                let quoteData = try decoder.decode([Quote].self, from: data)
+                let data = try Data(contentsOf: url)
                 
-                //Add unique IDs
-                //Use the for-in loop in this example since out Quote model is a struct and not a class.
-                //This loop needs to be used whe the mode is a value type
-                for index in 0..<quotes.count{
-                    quotes[index].id = UUID()
+                //Initaliate decoder object
+                let decoder = JSONDecoder()
+                
+                //Decode the data with a JSON Decoder
+                //Utilize do-try-catch since decode class can throw an error
+                do{
+                    let quoteData = try decoder.decode([Quote].self, from: data)
+                    
+                    //Add unique IDs
+                    //Use the for-in loop in this example since out Quote model is a struct and not a class.
+                    //This loop needs to be used whe the mode is a value type
+                    for q in quoteData {
+                        q.id = UUID()
+                    }
+                    
+                    //Return decoded data
+                    return quoteData
+                    
+// This is an alternative was of writing lines 48-58, if we change Quote model into a struct and have to change the kind of for-in loop we need to use to add unique IDs
+//                    var quoteData = try decoder.decode([Quote].self, from: data)
+//
+//                    for index in 0..<quoteData.count {
+//                        quoteData[index].id = UUID()
+//                    }
+//                    //Return decoded data
+//                    return quoteData
                 }
-                
-                //Return decoded data
-                return quoteData
+                catch{
+                    //Error decoding data
+                    print(error)
+                }
             }
             catch{
-                //Error decoding data
+                //Error getting data
                 print(error)
             }
-        }
-        catch{
-            //Error getting data
-            print(error)
         }
         
         //Return an empty array code falls through after guard statement
