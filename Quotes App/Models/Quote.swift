@@ -8,7 +8,7 @@
 import Foundation
 
 //Class for quote cards and quotes used in the app
-class Quote: Identifiable, Decodable {
+struct Quote: Identifiable, Decodable {
     
     //properties needed for class's data
     var id:UUID?
@@ -16,4 +16,11 @@ class Quote: Identifiable, Decodable {
     var cardQuote:String
     var author:String
     var quotes:[String]
+    
+    static func testData() -> Quote {
+        let testQuote = Quote(id:UUID(), image:"Naruto", cardQuote:"Test Quote", author:"Test", quotes:["quote 1", "quote 2"])
+        
+        return testQuote
+    }
+    
 }

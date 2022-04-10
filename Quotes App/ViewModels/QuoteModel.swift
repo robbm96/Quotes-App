@@ -14,9 +14,58 @@ class QuoteModel: ObservableObject {
     @Published var quotes = [Quote]()
     
     init() {
+        self.quotes = getLocalData()
+    }
+    
+    //Function used to get the data from the JSON file and return it as an array
+    //Use static keyword so that we can call this function without having to create an instance of this class since it is only being used to call this function
+    func getLocalData() -> [Quote] {
         
-        //Create and instance of DataService and get the data all in line of code.
-        //Since getLocalData() used a static keyword, we were able to call it would having to create an instance of the DataService class
-        self.quotes = DataServices.getLocalData()
+        //Get a url path to the JSON file
+        //Return a String optional
+        let pathString = Bundle.main.path(forResource: "data", ofType: "json")
+        
+        //Validate that pathString is not nil
+        guard pathString != nil else{
+            return [Quote]()
+        }
+        
+        //Create a url object from the pathString
+        //Unwrap pathString since it is an optional
+        let url = URL(fileURLWithPath: pathString!)
+        
+        //Create a data object from the url object
+        //Since the Data class can throw an error, we must utilize do-try-catch
+        do{
+            let data = try Data(contentsOf: url)
+            
+            //Initaliate decoder object
+            let decoder = JSONDecoder()
+            
+            //Decode the data with a JSON Decoder
+            //Utilize do-try-catch since decode class can throw an error
+            do{
+                let quoteData = try decoder.decode([Quote].self, from: data)
+                
+                //Add unique IDs
+                for index in 0..<quotes.count{
+                    quotes[index].id = UUID()
+                }
+                
+                //Return decoded data
+                return quoteData
+            }
+            catch{
+                //Error decoding data
+                print(error)
+            }
+        }
+        catch{
+            //Error getting data
+            print(error)
+        }
+        
+        //Return an empty array code falls through after guard statement
+        return [Quote]()
     }
 }
