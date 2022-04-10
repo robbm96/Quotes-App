@@ -28,6 +28,7 @@ struct Card: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 
                 //Author
                 Text("- " + quote.author)
@@ -46,6 +47,9 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(quote: Quote.testData())
+        
+        let model = QuoteModel()
+        
+        Card(quote: model.quotes[0])
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 //Class for quote cards and quotes used in the app
-struct Quote: Identifiable, Decodable {
+class Quote: Identifiable, Decodable {
     
     //properties needed for class's data
     var id:UUID?
@@ -17,11 +17,13 @@ struct Quote: Identifiable, Decodable {
     var author:String
     var quotes:[String]
     
-    //Create func that creates test data that can be used in other views
-    static func testData() -> Quote {
-        let testQuote = Quote(id:UUID(), image:"Naruto", cardQuote:"Test Quote", author:"Test Author", quotes:["quote 1", "quote 2"])
-        
-        return testQuote
-    }
+// This alternative would only be used for Previws in other views if Quite is a stuct and not a class
+//    //Create func that creates test data that can be used in other views
+//    static func testData() -> Quote {
+//        
+//        var testQuote = Quote(id:UUID(), image:"Naruto", cardQuote:"Test Quote", author:"Test Author", quotes:["quote 1", "quote 2"])
+//        
+//        return testQuote
+//    }
     
 }
