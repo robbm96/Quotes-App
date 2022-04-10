@@ -17,8 +17,9 @@ struct Quote: Identifiable, Decodable {
     var author:String
     var quotes:[String]
     
+    //Create func that creates test data that can be used in other views
     static func testData() -> Quote {
-        let testQuote = Quote(id:UUID(), image:"Naruto", cardQuote:"Test Quote", author:"Test", quotes:["quote 1", "quote 2"])
+        let testQuote = Quote(id:UUID(), image:"Naruto", cardQuote:"Test Quote", author:"Test Author", quotes:["quote 1", "quote 2"])
         
         return testQuote
     }

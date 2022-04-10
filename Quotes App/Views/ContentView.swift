@@ -15,11 +15,12 @@ struct ContentView: View {
     
     var body: some View {
         
+        
         //Use ScrollView container to generate quote card images
-        ScrollView{
-            VStack{
-                
-            }
+        NavigationView {
+            ScrollView{
+     
+            }.navigationBarTitle("Quotes")
         }
     }
 }

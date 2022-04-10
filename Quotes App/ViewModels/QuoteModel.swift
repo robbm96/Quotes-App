@@ -13,8 +13,10 @@ class QuoteModel: ObservableObject {
     //Use @Published wrapper so changed can be seen
     @Published var quotes = [Quote]()
     
+    
+    //Set initializer that will assign data returned from the decoder to quotes array
     init() {
-        self.quotes = getLocalData()
+        quotes.self = getLocalData()
     }
     
     //Function used to get the data from the JSON file and return it as an array
@@ -48,6 +50,8 @@ class QuoteModel: ObservableObject {
                 let quoteData = try decoder.decode([Quote].self, from: data)
                 
                 //Add unique IDs
+                //Use the for-in loop in this example since out Quote model is a struct and not a class.
+                //This loop needs to be used whe the mode is a value type
                 for index in 0..<quotes.count{
                     quotes[index].id = UUID()
                 }
