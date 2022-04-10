@@ -19,7 +19,18 @@ struct ContentView: View {
         //Use ScrollView container to generate quote card images
         NavigationView {
             ScrollView{
-     
+                VStack{
+                    
+                    //Generate card for each author and cardQuote
+                    ForEach(model.quotes) { q in
+                        //Will iterate through each quote object in the quote array
+                        NavigationLink(destination: DetailView(quote: q), label: {
+                            
+                            //Each quote card in the ScrollView
+                            Card(quote: q)
+                        })
+                    }
+                }
             }.navigationBarTitle("Quotes")
         }
     }
